@@ -1,0 +1,13 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.icon {
+    height: 7vh;
+}
+
+.toolBarSpacer {
+    flex: 1 1 auto;;
+}
+
+.generalTitle {
+    letter-spacing: 0.5vw;
+}
