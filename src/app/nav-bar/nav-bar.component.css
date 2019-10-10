@@ -1,0 +1,14 @@
+.icon {
+    height: 10vh;
+}
+
+.toolBarSpacer {
+    flex: 1 1 auto;;
+}
+
+.generalTitle {
+    font-size: x-large;
+    letter-spacing: 0.5vw;
+    word-spacing: 3vh;
+    text-shadow: 0.2vh;
+}
