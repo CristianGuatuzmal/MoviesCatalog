@@ -9,6 +9,7 @@ export class MovieDataComponent implements OnInit {
 
   @Input() imagePath: string;
   @Input() movieTitle: string;
+  @Input() movieOverview: string;
 
   constructor() { }
 
