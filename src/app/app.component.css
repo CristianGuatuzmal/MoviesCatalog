@@ -1,1 +1,5 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mainContainer {
+    min-height: 91.7vh;
+}

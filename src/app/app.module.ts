@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +34,9 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     MatInputModule,
     MatFormFieldModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

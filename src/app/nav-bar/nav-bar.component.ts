@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   @Input() public title: string;
+  @Input() public openableSideNavbar: MatSidenav;
 
   constructor( ) { }
 

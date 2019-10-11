@@ -1,5 +1,13 @@
-<div class=app>
- <app-nav-bar [title]=title></app-nav-bar>
+<div class='app'>
+  <app-nav-bar [title]=title [openableSideNavbar]='sidenav'></app-nav-bar>
+  <mat-sidenav-container class='mainContainer'>
+    <mat-sidenav mode=push #sidenav >
+      <app-side-menu [title]=title></app-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet>
+        <h1>works by now</h1>
+      </router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
-
-<router-outlet></router-outlet>
