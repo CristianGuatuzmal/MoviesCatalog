@@ -2,8 +2,11 @@
     <mat-drawer-container class='moviesCategories'>
         <mat-drawer mode='side' opened class='categoriesList'>
             <h3>Select categories</h3>
-            <mat-selection-list #categoriesSelector class='categories'>
-                <mat-list-option *ngFor='let category of categories'>
+            <mat-selection-list #categoriesList class='categories'
+                                [(ngModel)]='selectedOptions'
+                                (ngModelChange)='buildMoviesList(selectedOptions)'>
+            <p>{{categoriesList.selectedOptions.selected.length}}</p>
+                <mat-list-option *ngFor='let category of categories' [value]='category.name'>
                     {{category.name}}
                 </mat-list-option>
             </mat-selection-list>

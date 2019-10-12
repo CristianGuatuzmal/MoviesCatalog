@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
@@ -40,6 +41,7 @@ import { CategoriesViewComponent } from './categories-view/categories-view.compo
     HttpClientJsonpModule,
     MatToolbarModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatGridListModule,

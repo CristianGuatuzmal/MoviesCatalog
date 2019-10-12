@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
+import { MatListOption } from '@angular/material/list';
+import { filter } from 'minimatch';
 
 @Component({
   selector: 'app-categories-view',
@@ -22,8 +24,14 @@ export class CategoriesViewComponent implements OnInit {
     this.expectedQualification = 0;
     this.inclusive = true;
   }
+  buildMoviesList(selectedCategories: string[]) {
+    let usableCategories: number[] = [0];
+    const filteredCategories = this.categories.filter(category => selectedCategories.includes(category.name));
+    usableCategories =  this.generateNumberArray(filteredCategories);
+    this.moviesService.getFilteredMovies(usableCategories).then((data: []) => this.moviesList = data);
+  }
 
-  private generateNumberArray(categories: [{id: number, name: string}]) {
+  private generateNumberArray(categories: {id: number, name: string}[]) {
     let result: number[] = [0];
     result = categories.map((item, index) => result[index] = item.id);
     return result;
