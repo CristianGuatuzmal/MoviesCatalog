@@ -1,11 +1,23 @@
 <div>
     <mat-drawer-container class='moviesCategories'>
         <mat-drawer mode='side' opened class='categoriesList'>
-            <h3>Select categories</h3>
+            <h3>Filtrar por Calificación</h3>
+            <mat-checkbox (change)='toggleInclusive()'>
+                ¿Califiación inclusiva?
+            </mat-checkbox>
+            <mat-checkbox (change)='toggleMaximumLimit()'>
+                Buscar Calificacion por debajo
+            </mat-checkbox>
+            <star-rating #rating value='5'
+                         checkedcolor='orange' 
+                         uncheckedcolor='grey'
+                         size='25px'
+                         readonly='false'
+                         (rate)='filterByQualification(rating.value)'></star-rating>
+            <h3>filtrar por categorías</h3>
             <mat-selection-list #categoriesList class='categories'
                                 [(ngModel)]='selectedOptions'
                                 (ngModelChange)='buildMoviesList(selectedOptions)'>
-            <p>{{categoriesList.selectedOptions.selected.length}}</p>
                 <mat-list-option *ngFor='let category of categories' [value]='category.name'>
                     {{category.name}}
                 </mat-list-option>
@@ -18,7 +30,8 @@
                     <app-movie-data [movieTitle]=movie.title
                                     [imagePath]=movie.poster_path
                                     [movieOverview]=movie.overview
-                                    [movieDate]=movie.release_date></app-movie-data>
+                                    [movieDate]=movie.release_date
+                                    [movieRating]=movie.vote_average></app-movie-data>
                 </mat-grid-tile>
             </mat-grid-list>
         </mat-drawer-content>

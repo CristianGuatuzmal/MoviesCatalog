@@ -12,6 +12,7 @@ import {MatListModule} from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RatingModule } from 'ng-starrating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,7 +51,8 @@ import { CategoriesViewComponent } from './categories-view/categories-view.compo
     MatListModule,
     MatSidenavModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

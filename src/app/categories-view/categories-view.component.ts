@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
-import { MatListOption } from '@angular/material/list';
-import { filter } from 'minimatch';
 
 @Component({
   selector: 'app-categories-view',
@@ -15,6 +13,7 @@ export class CategoriesViewComponent implements OnInit {
   private expectedQualification: number;
   private maximumLimit: boolean;
   private inclusive: boolean;
+  private listCopy: [];
 
   constructor(private moviesService: MoviesService) { }
 
@@ -23,12 +22,15 @@ export class CategoriesViewComponent implements OnInit {
     this.maximumLimit = false;
     this.expectedQualification = 0;
     this.inclusive = true;
+    this.moviesService.popularMoviesQuery().then(data => this.moviesList = data);
+    this.moviesService.popularMoviesQuery().then(data => this.listCopy = data);
   }
   buildMoviesList(selectedCategories: string[]) {
     let usableCategories: number[] = [0];
     const filteredCategories = this.categories.filter(category => selectedCategories.includes(category.name));
     usableCategories =  this.generateNumberArray(filteredCategories);
     this.moviesService.getFilteredMovies(usableCategories).then((data: []) => this.moviesList = data);
+    this.listCopy = this.moviesList;
   }
 
   private generateNumberArray(categories: {id: number, name: string}[]) {
@@ -37,13 +39,37 @@ export class CategoriesViewComponent implements OnInit {
     return result;
   }
 
-  private filterByQualification() {
-    if (this.maximumLimit) {
-      this.inclusive ? this.moviesList.filter( movie => movie.vote_average <= this.expectedQualification) :
-      this.moviesList.filter( movie => movie.vote_average < this.expectedQualification);
+  private setExpectedQualification(expectedQualification: number) {
+    this.expectedQualification = expectedQualification;
+  }
+
+  private filterByQualification(expectedQualification: number) {
+    this.moviesList = this.listCopy;
+    this.setExpectedQualification(expectedQualification);
+    if (this.moviesList === undefined) {
+      alert('Por favor seleccione una categoría primero');
     } else {
-      this.inclusive ? this.moviesList.filter( movie => movie.vote_average >= this.expectedQualification) :
-      this.moviesList.filter( movie => movie.vote_average > this.expectedQualification);
+      if (this.maximumLimit === true) {
+        this.inclusive === true ?
+          this.moviesList = this.moviesList.filter( movie =>
+            Math.round(movie.vote_average / 2) <= this.expectedQualification) :
+          this.moviesList = this.moviesList.filter( movie =>
+            Math.round(movie.vote_average / 2) < this.expectedQualification);
+      } else {
+        this.inclusive === true ?
+          this.moviesList = this.moviesList.filter( movie =>
+            Math.round(movie.vote_average / 2) >= this.expectedQualification) :
+          this.moviesList = this.moviesList.filter( movie =>
+            Math.round(movie.vote_average / 2) > this.expectedQualification);
+      }
     }
+  }
+
+  toggleInclusive(inclusive: boolean) {
+    this.inclusive = !this.inclusive;
+  }
+
+  toggleMaximumLimit(maximumLimit: boolean) {
+    this.maximumLimit = !this.maximumLimit;
   }
 }

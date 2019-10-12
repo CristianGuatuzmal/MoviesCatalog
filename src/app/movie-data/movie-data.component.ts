@@ -11,10 +11,16 @@ export class MovieDataComponent implements OnInit {
   @Input() movieTitle: string;
   @Input() movieOverview: string;
   @Input() movieDate: string;
-
+  @Input() movieRating: number;
+  @Input() numberOfStars: string;
   constructor() { }
 
   ngOnInit() {
+    this.numberOfStars = this.determineNumberOfStars(this.movieRating).toString();
+  }
+
+  determineNumberOfStars(rating: number) {
+    return Math.round(rating / 2);
   }
 
 }

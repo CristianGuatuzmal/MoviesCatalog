@@ -1,9 +1,10 @@
 <h2>Popular Movies</h2>
-<mat-grid-list cols='4' rowHeight='1:1.4' class='popularMovies'>
+<mat-grid-list cols='4' rowHeight='1:1.3' class='popularMovies'>
     <mat-grid-tile role=listitem *ngFor='let movie of popularMovies'>
             <app-movie-data [movieTitle]=movie.title
                             [imagePath]=movie.poster_path
                             [movieOverview]=movie.overview
-                            [movieDate]=movie.release_date></app-movie-data>
+                            [movieDate]=movie.release_date
+                            [movieRating]=movie.vote_average></app-movie-data>
     </mat-grid-tile>
 </mat-grid-list>
