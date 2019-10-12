@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
 
   constructor( ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.iconPath = '../assets/images/kisspng-film-cinema-logo-cinema-x-chin-5ad8baa21ebd72.5910714415241529941259.png';
   }
 

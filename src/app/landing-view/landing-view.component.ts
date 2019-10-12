@@ -8,11 +8,11 @@ import { MoviesService } from '../movies.service';
 })
 export class LandingViewComponent implements OnInit {
 
-  popularMovies: [{}];
+  private popularMovies: [{}];
 
   constructor(private moviesService: MoviesService) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.moviesService.popularMoviesQuery().then(data => this.popularMovies = data);
   }
 

@@ -17,7 +17,7 @@ export class CategoriesViewComponent implements OnInit {
 
   constructor(private moviesService: MoviesService) { }
 
-  async ngOnInit() {
+  public async ngOnInit() {
     await this.moviesService.getCategoriesList().then(data => this.categories = data);
     this.maximumLimit = false;
     this.expectedQualification = 0;
@@ -25,7 +25,7 @@ export class CategoriesViewComponent implements OnInit {
     this.moviesService.popularMoviesQuery().then(data => this.moviesList = data);
     this.moviesService.popularMoviesQuery().then(data => this.listCopy = data);
   }
-  buildMoviesList(selectedCategories: string[]) {
+  public buildMoviesList(selectedCategories: string[]) {
     let usableCategories: number[] = [0];
     const filteredCategories = this.categories.filter(category => selectedCategories.includes(category.name));
     usableCategories =  this.generateNumberArray(filteredCategories);
@@ -65,11 +65,11 @@ export class CategoriesViewComponent implements OnInit {
     }
   }
 
-  toggleInclusive(inclusive: boolean) {
+  protected toggleInclusive() {
     this.inclusive = !this.inclusive;
   }
 
-  toggleMaximumLimit(maximumLimit: boolean) {
+  protected toggleMaximumLimit() {
     this.maximumLimit = !this.maximumLimit;
   }
 }

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LandingViewComponent } from './landing-view/landing-view.component';
+import { RouterModule, Routes } from '@angular/router';
 import { CategoriesViewComponent } from './categories-view/categories-view.component';
-
+import { LandingViewComponent } from './landing-view/landing-view.component';
 
 const routes: Routes = [
   {path: 'most-popular', component: LandingViewComponent},

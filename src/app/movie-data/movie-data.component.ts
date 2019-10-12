@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-movie-data',
@@ -7,19 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MovieDataComponent implements OnInit {
 
-  @Input() imagePath: string;
-  @Input() movieTitle: string;
-  @Input() movieOverview: string;
-  @Input() movieDate: string;
-  @Input() movieRating: number;
-  @Input() numberOfStars: string;
+  @Input() private imagePath: string;
+  @Input() private movieTitle: string;
+  @Input() private movieOverview: string;
+  @Input() private movieDate: string;
+  @Input() private movieRating: number;
+  @Input() private numberOfStars: string;
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.numberOfStars = this.determineNumberOfStars(this.movieRating).toString();
   }
 
-  determineNumberOfStars(rating: number) {
+  public determineNumberOfStars(rating: number) {
     return Math.round(rating / 2);
   }
 
