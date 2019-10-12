@@ -24,8 +24,8 @@
             </mat-selection-list>
         </mat-drawer>
         <mat-drawer-content>
-            <h2>Resultados</h2>
-            <mat-grid-list cols='3' rowHeight='1:1.4' class='filteredMovies'>
+            <h2 class='filterResultsTitle'>Resultados</h2>
+            <mat-grid-list cols='3' rowHeight='1:1.57' class='filteredMovies'>
                 <mat-grid-tile role=listitem *ngFor='let movie of moviesList'>
                     <app-movie-data [movieTitle]=movie.title
                                     [imagePath]=movie.poster_path

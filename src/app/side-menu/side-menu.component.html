@@ -1,4 +1,9 @@
-<mat-list>
-    <h2>{{title}}</h2>
-    <mat-list-item role=listitem><a>Categorías</a></mat-list-item>
-</mat-list>
+<mat-nav-list class='routesList'>
+    <h2 class='routerTitle'>{{title}}</h2>
+    <a class='routerLink' mat-list-item routerLink='most-popular' activeRouterLink>
+        Más populares
+    </a>
+    <a class='routerLink' mat-list-item routerLink='categories-search' activeRouterLink>
+        Buscar por categorías
+    </a>
+</mat-nav-list>

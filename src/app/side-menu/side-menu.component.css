@@ -1,0 +1,13 @@
+.routesList {
+    width: 15vw;
+}
+
+.routerTitle {
+    margin-left: 1.1vw;
+    margin-bottom: 1.1vw;
+    font-size: 2vw;
+}
+
+.routerLink {
+    font-size: 1.2vw;
+}

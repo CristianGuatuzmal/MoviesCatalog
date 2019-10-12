@@ -1,16 +1,16 @@
 .movieShower {
-    min-width: 14vh;
-    border-radius: 5vh;
+    min-width: 22vh;
+    border-radius: 6vh;
 }
 
 .movieShower :hover {
     animation-name: changeSize;
-    width: 31vh;
-    animation-duration: 0.2s
+    width: 21vw;
+    animation-duration: 0.2s;
 }
 
 .moviePoster {
-    width: 15vw;
+    width: 22vw;
     margin-bottom: 0%;
 }
 
@@ -21,6 +21,7 @@
 .movieTitle {
     margin: 0;
     margin-bottom: 1vh;
+    margin-left: 1.1vw;
 }
 
 .details {
@@ -28,6 +29,6 @@
 }
 
 @keyframes changeSize {
-    from {width: 29vh;}
-    to {width: 31vh;}
+    from {width: 22vw;}
+    to {width: 21vw;}
 }

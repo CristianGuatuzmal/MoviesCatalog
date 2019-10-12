@@ -1,10 +1,15 @@
 .categoriesList {
     min-width: 240px;
-    width: 17%;
+    width: 17vw;
     max-width: 400px;
     padding-top: 1vh;
     padding-left: 1vw;}
 
 .moviesCategories {
     min-height: 89vh;
+}
+
+.filterResultsTitle {
+    margin-left: 1.1vw;
+    margin-bottom: 1.1vw;
 }

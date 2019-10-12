@@ -21,7 +21,7 @@ export class CategoriesViewComponent implements OnInit {
     await this.moviesService.getCategoriesList().then(data => this.categories = data);
     this.maximumLimit = false;
     this.expectedQualification = 0;
-    this.inclusive = true;
+    this.inclusive = false;
     this.moviesService.popularMoviesQuery().then(data => this.moviesList = data);
     this.moviesService.popularMoviesQuery().then(data => this.listCopy = data);
   }

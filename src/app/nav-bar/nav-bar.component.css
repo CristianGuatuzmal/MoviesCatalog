@@ -1,5 +1,6 @@
 .icon {
-    height: 10vh;
+    min-height: 7vh;
+    max-height: 10vh;
 }
 
 .toolBarSpacer {
@@ -7,6 +8,8 @@
 }
 
 .generalTitle {
+    margin-left: 1.1vw;
+    margin-bottom: 1.1vw;
     font-size: x-large;
     letter-spacing: 0.5vw;
     word-spacing: 3vh;
@@ -14,5 +17,5 @@
 }
 
 .menu {
-    font-size: 2vw;
+    font-size: 1.6vw;
 }
