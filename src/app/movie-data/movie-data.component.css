@@ -23,6 +23,10 @@
     margin-bottom: 1vh;
 }
 
+.details {
+    font-size: 1.7vh;
+}
+
 @keyframes changeSize {
     from {width: 29vh;}
     to {width: 31vh;}

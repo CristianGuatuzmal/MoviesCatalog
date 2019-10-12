@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { LandingViewComponent } from './landing-view/landing-view.component';
+import { CategoriesViewComponent } from './categories-view/categories-view.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LandingViewComponent } from './landing-view/landing-view.component';
     MovieDataComponent,
     NavBarComponent,
     SideMenuComponent,
-    LandingViewComponent
+    LandingViewComponent,
+    CategoriesViewComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { LandingViewComponent } from './landing-view/landing-view.component';
     MatButtonModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

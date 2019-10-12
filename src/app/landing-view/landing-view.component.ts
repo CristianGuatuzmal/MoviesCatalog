@@ -8,7 +8,7 @@ import { MoviesService } from '../movies.service';
 })
 export class LandingViewComponent implements OnInit {
 
-  popularMovies: any;
+  popularMovies: [{}];
 
   constructor(private moviesService: MoviesService) { }
 

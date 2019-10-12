@@ -1,0 +1,23 @@
+<div>
+    <mat-drawer-container class='moviesCategories'>
+        <mat-drawer mode='side' opened class='categoriesList'>
+            <h3>Select categories</h3>
+            <mat-selection-list #categoriesSelector class='categories'>
+                <mat-list-option *ngFor='let category of categories'>
+                    {{category.name}}
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <h2>Resultados</h2>
+            <mat-grid-list cols='3' rowHeight='1:1.4' class='filteredMovies'>
+                <mat-grid-tile role=listitem *ngFor='let movie of moviesList'>
+                    <app-movie-data [movieTitle]=movie.title
+                                    [imagePath]=movie.poster_path
+                                    [movieOverview]=movie.overview
+                                    [movieDate]=movie.release_date></app-movie-data>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

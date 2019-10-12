@@ -1,0 +1,9 @@
+.categoriesList {
+    min-width: 240px;
+    width: 17%;
+    max-width: 400px;
+}
+
+.moviesCategories {
+    min-height: 89vh;
+}
